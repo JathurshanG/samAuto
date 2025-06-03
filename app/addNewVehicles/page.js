@@ -127,7 +127,7 @@ export default function AddNewVehiclePage() {
       setLoading(false);
       return;
     }
-
+    console.log(user.id)
     const { data, error } = await supabase.from('vehicules').insert([{
       ...form,
       user_id: user.id,
