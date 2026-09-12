@@ -1,0 +1,52 @@
+export type ListingStatus =
+  "AVAILABLE" | "RESERVED" | "SOLD" | "DRAFT" | "ARCHIVED";
+export type Business = {
+  id: string;
+  kind: "SALES" | "WORKSHOP";
+  name: string;
+  phone: string | null;
+  whatsapp: string | null;
+  email: string | null;
+  address: string | null;
+  hours: string | null;
+  legal_text: string | null;
+  privacy_text: string | null;
+  workshop_operator_id: string | null;
+  services: string[];
+  benefits: string[];
+  is_demo: boolean;
+};
+export type Vehicle = {
+  id: string;
+  business_id: string;
+  make: string;
+  model: string;
+  version: string;
+  year: number;
+  mileage: number;
+  fuel: string;
+  transmission: string;
+  body: string;
+  color: string;
+  power: number | null;
+  fiscal_power: number | null;
+  engine_cc: number | null;
+  doors: number | null;
+  seats: number | null;
+  first_registration: string | null;
+  description: string;
+  equipment: string[];
+};
+export type Listing = {
+  id: string;
+  vehicle_id: string;
+  business_id: string;
+  slug: string;
+  price: number;
+  status: ListingStatus;
+  warranty: string | null;
+  published_at: string | null;
+  created_at: string;
+  vehicles: Vehicle;
+  vehicle_images?: { id: string; position: number }[];
+};

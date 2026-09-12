@@ -1,0 +1,8 @@
+node_modules
+.next
+package-lock.json
+playwright-report
+test-results
+supabase/migrations
+supabase/seed.sql
+supabase/bootstrap.sql
